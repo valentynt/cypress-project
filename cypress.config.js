@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://qauto.forstudy.space",
     viewportWidth: 1280,
     viewportHeight: 720,
     video: true,
@@ -13,12 +13,17 @@ module.exports = defineConfig({
     screenshotsFolder: "cypress/screenshots",
     specPattern: "cypress/e2e/**/*.cy.js",
     retries: {
-      runMode: 2,
-      openMode: 2,
+      runMode: 1,
+      openMode: 1,
     },
-    watchForFileChanges: true, // позволяет автоматически перезапускать тесты при изменении файлов
+    watchForFileChanges: false, // позволяет автоматически перезапускать тесты при изменении файлов
     defaultCommandTimeout: 8000, // 8 секунд  Устанавливает время ожидания по умолчанию для всех команд
     pageLoadTimeout: 60000, // 60 секунд Устанавливает время ожидания для загрузки страницы.
     chromeWebSecurity: true, // Отключение веб-безопасности в Chrome, если это необходимо для тестов.
+    env: {
+      username: "guest",
+      password: "welcome2qauto",
+    },
+    supportFile: "cypress/support/index.js",
   },
 });
