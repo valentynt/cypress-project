@@ -7,24 +7,24 @@ describe("UI Elements Check", () => {
   });
 
   context("Header Buttons", () => {
-    it("should find the 'Sign in' button", () => {
+    it("should find the 'Sign in' button and click it", () => {
       cy.get("button").contains("Sign In").should("be.visible").click();
     });
 
-    it("should find the 'Guest log in' button", () => {
+    it("should find the 'Guest log in' button and click it", () => {
       cy.get("button").contains("Guest log in").should("be.visible").click();
     });
 
-    it("should find the 'Contacts' button", () => {
+    it("should find the 'Contacts' button and click it", () => {
       cy.get("button").contains("Contacts").should("be.visible").click();
     });
 
-    it("should find the 'About' button", () => {
+    it("should find the 'About' button and click it", () => {
       cy.get("button").contains("About").should("be.visible").click();
     });
 
-    it("should find the 'Home' button", () => {
-      cy.get("a").contains("Home").should("be.visible");
+    it("should find the 'Home' button and click it", () => {
+      cy.get("a").contains("Home").should("be.visible").click();
     });
   });
 
@@ -49,13 +49,13 @@ describe("UI Elements Check", () => {
       cy.get("a[href*='linkedin']").should("be.visible").click();
     });
 
-    it("should find the ithillel.ua link and click it", () => {
+    it("should find the ithillel.ua link", () => {
       cy.get("a[href*='ithillel']")
         .should("be.visible")
         .and("include.text", "ithillel.ua");
     });
 
-    it("should find the support email link and click it", () => {
+    it("should find the support email link", () => {
       cy.get("a[href*='mailto']")
         .should("be.visible")
         .and("include.text", "support@ithillel.ua");
