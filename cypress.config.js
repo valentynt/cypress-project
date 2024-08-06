@@ -20,10 +20,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 8000, // 8 секунд  Устанавливает время ожидания по умолчанию для всех команд
     pageLoadTimeout: 60000, // 60 секунд Устанавливает время ожидания для загрузки страницы.
     chromeWebSecurity: true, // Отключение веб-безопасности в Chrome, если это необходимо для тестов.
-    env: {
-      username: "guest",
-      password: "welcome2qauto",
-    },
     supportFile: "cypress/support/index.js",
   },
 });
