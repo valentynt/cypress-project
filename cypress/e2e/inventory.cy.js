@@ -17,7 +17,7 @@ describe("Inventory Page Tests", () => {
   });
 
   it("should display 4 sort options in the dropdown", () => {
-    inventoryPage.getSortDropdown().click();
+    inventoryPage.getSortDropdown().select("Name (A to Z)");
     inventoryPage.getSortOptions().should("have.length", 4);
   });
 
