@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "https://qauto.forstudy.space",
+    baseUrl: "https://qauto.forstudy.space/api",
     viewportWidth: 1280,
     viewportHeight: 720,
     video: true,
