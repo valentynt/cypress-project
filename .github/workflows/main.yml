@@ -3,7 +3,7 @@ name: CI for Cypress Tests
 on:
   push:
     branches:
-cypress-homework-branch7
+            main
       
   pull_request:
 
@@ -34,8 +34,6 @@ jobs:
       - name: Run Cypress tests
         run: npm run test
 
-        run: npm install
-      
       - name: Run Cypress tests
         run: npm run test
 
