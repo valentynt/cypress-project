@@ -3,7 +3,7 @@ name: CI for Cypress Tests
 on:
   push:
     branches:
-      - main
+      - cypress-homework7
   pull_request:
 
 jobs:
