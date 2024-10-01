@@ -3,7 +3,8 @@ name: CI for Cypress Tests
 on:
   push:
     branches:
-      - main
+cypress-homework-branch7
+      
   pull_request:
 
 jobs:
@@ -27,7 +28,14 @@ jobs:
           node-version: '16'
       
       - name: Install dependencies
-        run: npm ci
+
+        run: npm install
       
       - name: Run Cypress tests
         run: npm run test
+
+        run: npm install
+      
+      - name: Run Cypress tests
+        run: npm run test
+
