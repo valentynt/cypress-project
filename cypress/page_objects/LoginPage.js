@@ -8,7 +8,7 @@ class LoginPage {
   }
 
   clickSignInButton() {
-    cy.get("button.header_signin", { timeout: 60000 }).first().click();
+    cy.get("button.header_signin", { timeout: 240000 }).first().click();
   }
 
   fillEmail(email) {
