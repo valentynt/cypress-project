@@ -2,7 +2,7 @@ import LoginPage from "../page_objects/LoginPage";
 
 describe("Registration Validation Tests", () => {
   const loginPage = new LoginPage();
-  const { loginPassword } = Cypress.env();
+  const { loginPassword } = Cypress.env("LOGIN_PASSWORD");
   const uniqueEmail = `searapan${Date.now()}@gmail.com`;
 
   beforeEach(() => {
