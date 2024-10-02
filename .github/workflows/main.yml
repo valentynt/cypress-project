@@ -1,39 +1,39 @@
-name: CI for Cypress Tests
+name: Run Cypress Tests
 
 on:
   push:
     branches:
-            main
-      
+      - cypress-homework-branch8
   pull_request:
+    branches:
+      - cypress-homework-branch8
 
 jobs:
-  cypress-tests:
+  cypress-run:
     runs-on: ubuntu-latest
-
-    services:
-      docker:
-        image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
-        options: --privileged
-        ports:
-          - 8080:8080
-          
+    container:
+      image: cypress/included:13.13.1
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      
-      - name: Install dependencies
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-        run: npm install
-      
-      - name: Run Cypress tests
-        run: npm run test
+    - name: Install dependencies
+      run: npm install
 
-      - name: Run Cypress tests
-        run: npm run test
+    - name: Run Cypress Tests in Docker
+      run: docker run -it -v ${PWD}:/e2e -w /e2e cypress/included:13.13.1
 
+    - name: Upload Cypress videos
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-videos
+        path: cypress/videos
+
+    - name: Upload Cypress screenshots
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-screenshots
+        path: cypress/screenshots
