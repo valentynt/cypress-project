@@ -7,6 +7,7 @@ describe("Login Test with Basic Authentication", () => {
 
   it("should find the Sign In button and log in using the provided credentials", () => {
     loginPage.visit();
+    loginPage.wait(60000);
     loginPage.login(loginEmail, loginPassword);
   });
 });
